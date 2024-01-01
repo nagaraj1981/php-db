@@ -8,7 +8,7 @@ pipeline{
     }
     stages{
         stage("Build the docker image for PHP and push to prviate registry"){
-            stepsp{
+            steps{
             script{
                 sshagent(['build-server']){
                 withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]){
